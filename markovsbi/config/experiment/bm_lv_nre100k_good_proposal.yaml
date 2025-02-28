@@ -1,0 +1,25 @@
+# @package _global_
+name: bm_lv100k_good_proposal
+
+hydra:
+  mode: MULTIRUN
+  sweeper:
+    params:
+      seed: 0,1,2,3,4
+      method: nre
+      eval: swd_and_c2st
+      eval.num_steps_xs: [2,11,101]
+      task: lotka_volterra
+      task.num_simulations: 95_000
+      task.params.proposal: pred
+    
+  run:
+    dir: results/${name}
+  sweep:
+    dir: results/${name}
+    subdir: ${hydra.job.override_dirname}
+
+
+defaults:
+  - _self_
+  - override /partition: gpu

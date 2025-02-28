@@ -1,0 +1,10 @@
+name: GAUS
+posterior_precission_est_fn: posterior
+auto_params:
+  ensure_valid: True
+  num_steps: 200
+  num_samples: 500
+  diag: False
+  window_size: 2
+  window_stride: 1
+  precission_nugget: 0.2

@@ -1,0 +1,25 @@
+# @package _global_
+name: bm_baseline
+
+hydra:
+  mode: MULTIRUN
+  sweeper:
+    params:
+      seed: 0,1,2,3,4
+      eval: swd_and_c2st
+      eval.num_steps_xs: [2,11,101,1001]
+      method: score
+      method/sampler: em_gaus
+      task: simple1dstationary,simple2dstationary,simple10dstationary
+      task.num_simulations: 10000
+    
+  run:
+    dir: results/${name}
+  sweep:
+    dir: results/${name}
+    subdir: ${hydra.job.override_dirname}
+
+
+defaults:
+  - _self_
+  - override /partition: gpu

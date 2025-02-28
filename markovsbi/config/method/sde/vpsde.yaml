@@ -1,0 +1,7 @@
+name: "vpsde"
+params:
+  beta_min: 0.1
+  beta_max: 10.0
+  T_max: 1.
+  T_min: 0.01
+  min_clip: 1e-2

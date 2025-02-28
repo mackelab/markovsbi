@@ -1,0 +1,6 @@
+
+
+name: em_fnpe
+defaults:
+  - diffusion_method: em
+  - factor_method: fnpe

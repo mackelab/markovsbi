@@ -1,0 +1,5 @@
+name: sir
+num_simulations: 100_000
+num_steps: 2
+params: 
+  proposal: naive

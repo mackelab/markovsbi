@@ -1,0 +1,10 @@
+num_epochs: 100
+num_inner_epochs: 50
+training_batch_size: 1000
+learning_rate: 5e-4
+clip_max_norm: 20.
+optimizer: optax.adamw
+scheduler: cosine
+ema: False
+ema_decay: 0.9
+validation: 1000

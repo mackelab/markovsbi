@@ -1,0 +1,6 @@
+name: mixture_rw_5d
+num_simulations: 10_000
+num_steps: 2
+params:
+  sigma0: 10.
+  proposal: "naive"

@@ -1,0 +1,7 @@
+name: pc
+predictor: em
+corrector: langevin
+steps: 500
+params_corrector:
+  steps: 5
+  step_size: 1e-3

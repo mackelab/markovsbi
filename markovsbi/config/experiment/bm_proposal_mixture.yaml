@@ -1,0 +1,28 @@
+# @package _global_
+name: bm_proposal_mixture
+
+hydra:
+  mode: MULTIRUN
+  sweeper:
+    params:
+      seed: 0,1,2,3,4
+      method: score
+      eval: swd_and_c2st
+      eval.num_steps_xs: [2,11,101]
+      method/sampler: em_gaus_auto_full
+      task: mixture_rw2d, mixture_rw5d
+      task.num_simulations: 10000
+      task.params.sigma0: 0.1,0.5,1.,2.,3.,5.,7.5,10., 12.5,15.,20.,50., 100., 200.,500.,1000.
+      method/neural_net: score_mlp_large
+      method/params_train: score_large
+    
+  run:
+    dir: results/${name}
+  sweep:
+    dir: results/${name}
+    subdir: ${hydra.job.override_dirname}
+
+
+defaults:
+  - _self_
+  - override /partition: gpu

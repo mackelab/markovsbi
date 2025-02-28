@@ -1,0 +1,6 @@
+
+
+name: ddim_fnpe
+defaults:
+  - diffusion_method: ddim
+  - factor_method: fnpe

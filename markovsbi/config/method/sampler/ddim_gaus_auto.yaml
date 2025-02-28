@@ -1,0 +1,6 @@
+
+
+name: ddim_gaus
+defaults:
+  - diffusion_method: ddim
+  - factor_method: gaus_auto

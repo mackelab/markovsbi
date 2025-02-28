@@ -1,0 +1,5 @@
+name: simple2dstationary
+num_simulations: 10_000
+num_steps: 2
+params: 
+  sigma0_scale: 1.

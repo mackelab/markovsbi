@@ -1,0 +1,6 @@
+
+
+name: em_gaus
+defaults:
+  - diffusion_method: em
+  - factor_method: gaus_auto_full

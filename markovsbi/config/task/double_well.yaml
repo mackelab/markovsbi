@@ -1,0 +1,5 @@
+name: double_well
+num_simulations: 10_000
+num_steps: 2
+params: 
+  proposal: naive

@@ -1,0 +1,6 @@
+
+
+name: pc_gaus
+defaults:
+  - diffusion_method: pc
+  - factor_method: gaus_auto

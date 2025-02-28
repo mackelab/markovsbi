@@ -1,0 +1,28 @@
+# @package _global_
+name: bm5_lv100k
+
+hydra:
+  mode: MULTIRUN
+  sweeper:
+    params:
+      seed: 0,1,2,3,4
+      method: score
+      eval: swd_and_c2st
+      eval.num_steps_xs: [6,11,101]
+      method/sampler: em_gaus_auto_full
+      task: lotka_volterra
+      task.num_steps: 6
+      task.num_simulations: 100000
+      method/neural_net: score_mlp_large
+      method/params_train: score_large
+    
+  run:
+    dir: results/${name}
+  sweep:
+    dir: results/${name}
+    subdir: ${hydra.job.override_dirname}
+
+
+defaults:
+  - _self_
+  - override /partition: gpu

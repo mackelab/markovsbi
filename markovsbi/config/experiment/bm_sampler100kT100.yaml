@@ -1,0 +1,27 @@
+# @package _global_
+name: bm_sampler100kT100
+
+hydra:
+  mode: MULTIRUN
+  sweeper:
+    params:
+      seed: 0
+      method: score
+      eval: none
+      eval.num_steps_xs: [null]
+      task: simple2dstationary, mixture_rw2d, periodic_sde, mixture_rw5d
+      task.num_simulations: 100000
+      method/neural_net: score_mlp_large
+      method/params_train: score_large
+      method.sampler.diffusion_method.steps: 100
+    
+  run:
+    dir: results/${name}
+  sweep:
+    dir: results/${name}
+    subdir: ${hydra.job.override_dirname}
+
+
+defaults:
+  - _self_
+  - override /partition: gpu

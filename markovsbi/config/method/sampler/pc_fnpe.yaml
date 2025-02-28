@@ -1,0 +1,6 @@
+
+
+name: pc_fnpe
+defaults:
+  - diffusion_method: pc
+  - factor_method: fnpe

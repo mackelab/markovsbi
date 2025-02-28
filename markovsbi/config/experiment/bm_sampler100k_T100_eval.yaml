@@ -1,0 +1,25 @@
+# @package _global_
+name: bm_sampler100kT100
+
+hydra:
+  mode: MULTIRUN
+  sweeper:
+    params:
+      seed: 0,1,2
+      eval: swd_and_c2st
+      eval.num_steps_xs: [2,3,4,5,6,7,8,9,10,11,21,31,41,51,61, 71,81,91,101,201,301,401,501]
+      model_id: 0,1,2,3
+      method/sampler: em_fnpe, em_gaus_auto_full, em_jac, pc_fnpe, pc_gaus_auto_full, pc_jac
+      method.sampler.diffusion_method.steps: 100
+      
+    
+  run:
+    dir: results/${name}
+  sweep:
+    dir: results/${name}
+    subdir: ${hydra.job.override_dirname}
+
+
+defaults:
+  - _self_
+  - override /partition: gpu

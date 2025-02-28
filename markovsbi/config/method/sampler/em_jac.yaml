@@ -1,0 +1,6 @@
+
+
+name: em_jac
+defaults:
+  - diffusion_method: em
+  - factor_method: jac

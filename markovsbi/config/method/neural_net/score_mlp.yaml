@@ -1,0 +1,9 @@
+name: score_mlp
+hidden_dim: 50
+activation: "jax.nn.gelu"
+num_hidden: 3
+layer_norm: True
+skip_connection: True
+time_embedding_dim: 16
+x_o_processing: "linear"
+preconditioner: v1

@@ -1,0 +1,25 @@
+# @package _global_
+name: bm_sir10k
+
+hydra:
+  mode: MULTIRUN
+  sweeper:
+    params:
+      seed: 0,1,2,3,4
+      method: npe
+      eval: swd_and_c2st
+      task: sir
+      eval.num_steps_xs: [2,11,101]
+      task.num_steps: 11
+      task.num_simulations: 1000
+    
+  run:
+    dir: results/${name}
+  sweep:
+    dir: results/${name}
+    subdir: ${hydra.job.override_dirname}
+
+
+defaults:
+  - _self_
+  - override /partition: cpu2

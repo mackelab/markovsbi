@@ -1,0 +1,25 @@
+# @package _global_
+name: bm_synthetic_100k_appendix
+
+hydra:
+  mode: MULTIRUN
+  sweeper:
+    params:
+      seed: 0,1,2,3,4
+      method: nse
+      eval: swd_and_c2st
+      eval.num_steps_xs: [2,11,101]
+      task: mixture_rw5d,periodic_sde,double_well,general_sde
+      task.num_steps: 11
+      task.num_simulations: 10000
+    
+  run:
+    dir: results/${name}
+  sweep:
+    dir: results/${name}
+    subdir: ${hydra.job.override_dirname}
+
+
+defaults:
+  - _self_
+  - override /partition: cpu2

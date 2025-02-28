@@ -1,0 +1,6 @@
+
+
+name: ddim_jac
+defaults:
+  - diffusion_method: ddim
+  - factor_method: jac

@@ -1,0 +1,7 @@
+name: "vesde"
+params:
+  sigma_min: 1e-2
+  sigma_max: 5.0
+  T_max: 1.
+  T_min: 0.01
+  min_clip: 1e-10

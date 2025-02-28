@@ -1,0 +1,26 @@
+# @package _global_
+name: bm5_sir100k_3
+
+hydra:
+  mode: MULTIRUN
+  sweeper:
+    params:
+      seed: 0,1,2,3,4
+      method: nle
+      eval: swd_and_c2st
+      eval.num_steps_xs: [6,11,101]
+      task: sir
+      task.num_steps: 6
+      task.num_simulations: 100000
+
+    
+  run:
+    dir: results/${name}
+  sweep:
+    dir: results/${name}
+    subdir: ${hydra.job.override_dirname}
+
+
+defaults:
+  - _self_
+  - override /partition: gpu

@@ -1,0 +1,5 @@
+
+name: 'dsm'
+params:
+  control_variate: True
+  control_variate_optimal_scaling: True

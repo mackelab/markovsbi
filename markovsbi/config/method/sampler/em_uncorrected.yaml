@@ -1,0 +1,6 @@
+
+
+name: em_uncorrected
+defaults:
+  - diffusion_method: em
+  - factor_method: uncorrected

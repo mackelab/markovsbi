@@ -1,0 +1,7 @@
+hydra:
+  mode: MULTIRUN
+  launcher:
+    partition: cpu-galvani
+    gres: null
+    cpus_per_task: 32
+    mem_gb: 32

@@ -1,0 +1,4 @@
+name: 10d_sde
+num_simulations: 10_000
+num_steps: 2
+params: {}

@@ -1,0 +1,6 @@
+name: [swd]
+num_eval_xs: 10
+num_steps_xs: 
+  - 2
+  - 11
+num_eval_samples: 1000
